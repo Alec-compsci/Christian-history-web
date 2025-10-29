@@ -1,7 +1,7 @@
 
 header{
-    margin-left: 125px;
-    padding: 30px;
+    margin-left: 80px;
+    padding: 15 25px;
     background-color: white ;
     font-size: 48;
     box-shadow: 0px 2px 5px #bbb;
@@ -10,7 +10,7 @@ header{
 .sidebar{
     margin: 0;
     padding: 0;
-    width: 125px;
+    width: 80px;
     background-color: #7a1616;
     position: fixed;
     height: 100%;
