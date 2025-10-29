@@ -1,0 +1,39 @@
+
+header{
+    margin-left: 160px;
+    padding: 30px;
+    background-color: white ;
+    font-size: 48;
+}
+
+.sidebar{
+    margin: 0;
+    padding: 0;
+    width: 125px;
+    background-color: #7a1616;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+.sidebar a{
+    display: block;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.sidebar div :hover{
+    color: white;
+    background-color: #56111a;
+}
+
+.navicon{
+    width: 100%;
+}
+
+main{
+    margin-left: 160px;
+    padding: 0px 10px;
+    height: 2000px;
+}
+
