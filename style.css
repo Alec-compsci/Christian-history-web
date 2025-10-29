@@ -1,9 +1,10 @@
 
 header{
-    margin-left: 160px;
+    margin-left: 125px;
     padding: 30px;
     background-color: white ;
     font-size: 48;
+    box-shadow: 0px 2px 5px #bbb;
 }
 
 .sidebar{
@@ -18,17 +19,18 @@ header{
 .sidebar a{
     display: block;
     color: white;
-    padding: 8px;
     text-decoration: none;
 }
 
 .sidebar div :hover{
     color: white;
+    transition: 0.35s;
     background-color: #56111a;
 }
 
 .navicon{
-    width: 100%;
+    width: 92%;
+    margin: 4%;
 }
 
 main{
