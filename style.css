@@ -34,6 +34,25 @@ header{
     margin: 5%;
 }
 
+.mode{
+    margin: 6px 8px;
+    width: 64px;
+    padding: 4px 4px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #56111a;
+    border: 0px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.mode:hover{
+    background-color: #7a1616;
+    transition: 0.35s;    
+    box-shadow: 0px 2px 5px #111;
+}
+
 main{
     margin: 10 90px;
     padding: 5px 10px;
