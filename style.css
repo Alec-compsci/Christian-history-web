@@ -59,6 +59,10 @@ main{
     height: 2000px;
 }
 
+body{
+    margin: 0;
+}
+
 footer{
     margin-left: 80px;
     color:white;
