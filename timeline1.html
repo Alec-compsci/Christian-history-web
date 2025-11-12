@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Home - Christian History</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="./switch.js" defer></script>
+    <body>
+        
+        <nav class="sidebar">
+            <div>
+            <a href="index.html"><img src="photoshop/homeIcon2.png" class="navIcon"></a>
+            </div>
+            <div>
+                <a href="timelines.hmtl"><img src="photoshop/timelinesIcon2.png" class="navIcon"></a>
+            </div>
+            <div>
+            <a href="articles.html"><img src="photoshop/articlesIcon.png" class="navIcon"></a>
+            </div>
+            <div>
+                <a href="index.html"><img src="photoshop/timelinesIcon.png" class="navIcon"></a>
+            </div>
+            <div>
+                <button onclick="modeChange()" class="mode">Dark Mode</button>
+            </div>
+        </nav>
+        <header> Home </header>
+        <main>
+            <div class="timelineNavBox">
+                <svg class="lineGraphic">
+                    <rect class="lineFill"/> <rect class="lineBorder"/> 
+                </svg>
+                <nav class="timelineNav">
+                    <ul>
+                        <li><a href="timeline1.html"> General History </a></li>
+                        <li><a href="timeline2.html"> Art of Jesus </a></li>
+                        <li><a href="timeline3.html"> History of the Bible </a></li>
+                    </ul>
+                </nav>
+            </div>
+            <article class="tla" onload="adjustSizing()"> 
+                <div>
+                    <h2>date 1</h2>
+                    <img src="photoshop/homeIcon.png" class="timelineImage">
+                    <h1>title here</h1>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut sequi quas iure, illo ea nisi maxime tempore atque, eligendi hic et nemo reiciendis id fugit, vel rerum enim quasi modi.</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>date 1</h2>
+                    <img src="photoshop/homeIcon.png" class="timelineImage">
+                    <h1>title here</h1>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut sequi quas iure, illo ea nisi maxime tempore atque, eligendi hic et nemo reiciendis id fugit, vel rerum enim quasi modi.</p>
+                </div>
+            </article>
+        </main>
+        <footer>
+            &copy; 2024 Christian History
+        </footer>
+    </body>
+</html>

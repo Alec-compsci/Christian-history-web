@@ -1,4 +1,5 @@
 
+
 header{
     margin-left: 80px;
     padding: 15 25px;
@@ -57,6 +58,96 @@ main{
     margin: 10 90px;
     padding: 5px 10px;
     height: 2000px;
+}
+
+.timelineNavBox{
+    position: fixed;
+    width: 220px;
+    height: 500px;
+    margin-left: calc(100% - 330px);
+    background-color: white;
+    box-shadow: 0px 2px 5px #bbb;
+    border-radius: 8px;
+}
+
+
+svg.lineGraphic{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 10px;
+    height: 480px;
+}
+
+.lineBorder{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #111;
+    stroke-width: 3;
+}
+
+.lineFill{
+    x: 1;
+    y: 1;
+    width: 8;
+    height: 8;
+    fill: #ffa914;
+}
+
+.timelineNav{
+    float: right;
+    margin-right:32px;
+    border-style:solid;
+}
+
+.timelineNav li{
+    margin-left: -40px;
+    margin-top: -8px;
+    list-style-type: square;
+    margin-right: 15px;
+    margin-bottom: 12px;
+
+}
+
+.tla{
+    border: #111 solid 2px;
+    float:left;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+
+}
+
+.tla div{
+    --div-height: 500px;
+    border: #111 solid 2px;    width: 90%;
+    min-height: var(--div-height);
+    height:auto;
+    margin: 20px;
+    padding: 10px;
+    
+}
+.tla h2{
+    font-size: 42;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tla h1{
+    font-size: 26;
+    margin-top: 0;
+    margin-bottom: -10;
+    margin-left: 50%;
+}
+
+.tla img{
+    width: 50%;
+    float: left;
+    border: #111 solid 2px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body{

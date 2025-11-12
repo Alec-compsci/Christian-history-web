@@ -1,4 +1,16 @@
 
+//main variables
+//const r = document.querySelector(':root');
+
+//stuff for adjusting timeline style sizes
+/*const tmDivs = document.querySelector('.tla div');
+function adjustSizing(){
+    let imgHeight = document.querySelector('.tla img').height;
+    tmDivs.style.setProperty('--div-height', (imgHeight) + 'px');
+}*/
+
+
+// dar/light mode switch
 darkMode = false;
 function modeChange() {
     const header = document.getElementsByTagName("header");
