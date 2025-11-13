@@ -66,7 +66,7 @@ main{
     position: fixed;
     width: 220px;
     height: 500px;
-    margin-left: calc(100% - 330px);
+    margin-left: calc(100% - 350px);
     background-color: white;
     box-shadow: 0px 2px 5px #bbb;
     border-radius: 8px;
@@ -114,15 +114,18 @@ svg.lineGraphic{
 /* Timeline Layout Area */
 
 .tla{
+    margin-left: calc(30% - 110px);
     border: #111 solid 2px;
     float:left;
-    max-width: 800px;
+    max-width: 750px;
     width: calc(100% - 180px);
     height: calc(100% - 20px);
 
 }
 
 .tla div{
+    margin-top: 15px;
+    margin-bottom: 15px;
     float: right;
     border: #111 solid 2px;    
     width: calc(100% - 30px);
@@ -139,10 +142,15 @@ svg.lineGraphic{
 }
 
 .tla h1{
-    font-size: 26;
-    margin-top: 0;
-    margin-bottom: -10;
+    font-size: 30;
+    margin-top: -1;
+    margin-bottom: -25;
     margin-left: 50%;
+}
+
+.tla p{
+    font-size: 22;
+    text-align: justify;
 }
 
 .tla img{
@@ -152,8 +160,9 @@ svg.lineGraphic{
     max-width: 300px;
     height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 8px;
+    margin-bottom: -10px;
 }
 
 .tla hr{
