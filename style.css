@@ -60,6 +60,8 @@ main{
     height: 2000px;
 }
 
+/* Timeline Navigation stuff */
+
 .timelineNavBox{
     position: fixed;
     width: 220px;
@@ -109,23 +111,27 @@ svg.lineGraphic{
 
 }
 
+/* Timeline Layout Area */
+
 .tla{
     border: #111 solid 2px;
     float:left;
-    width: calc(100% - 20px);
+    max-width: 800px;
+    width: calc(100% - 180px);
     height: calc(100% - 20px);
 
 }
 
 .tla div{
-    --div-height: 500px;
-    border: #111 solid 2px;    width: 90%;
-    min-height: var(--div-height);
+    float: right;
+    border: #111 solid 2px;    
+    width: calc(100% - 30px);
+    min-height: 280px;
     height:auto;
-    margin: 20px;
     padding: 10px;
     
 }
+
 .tla h2{
     font-size: 42;
     margin-top: 0;
@@ -143,12 +149,20 @@ svg.lineGraphic{
     width: 50%;
     float: left;
     border: #111 solid 2px;
-    max-width: 100%;
+    max-width: 300px;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
+.tla hr{
+
+    border: 2px solid #ffa914;
+    height: 0px;
+    background-color: #ffa914;
+}
+
 
 body{
     margin: 0;
