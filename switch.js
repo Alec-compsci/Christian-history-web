@@ -16,15 +16,23 @@ function modeChange() {
     const header = document.getElementsByTagName("header");
     const body = document.getElementsByTagName("body");
     const mode = document.getElementsByClassName("mode");
+    const tmLines = document.getElementsByTagName("line");
+    const tmNav = document.getElementsByClassName("timelineNavBox");
+    const lineBorder = document.getElementsByClassName("lineBorder");
             
     if (darkMode == false) {
         darkMode = true;
         mode[0].innerHTML = "Light Mode";
-        body[0].style.backgroundColor = "#252525";
+        body[0].style.backgroundColor = "#303030";
         body[0].style.color = "white";
         header[0].style.backgroundColor = "#222";
         header[0].style.color = "white";
-        header[0].style.boxShadow = "0px 2px 2px #fff";
+        header[0].style.boxShadow = "0px 1px 1px #fff";
+        tmLines[0].style.stroke = "white";
+        tmNav[0].style.boxShadow = "0px 2px 5px black";
+        tmNav[0].style.backgroundColor = "#303030";
+        lineBorder[0].style.stroke = "white";
+
     }
     else {
         darkMode = false;
@@ -37,5 +45,10 @@ function modeChange() {
         header[0].style.backgroundColor = "white";
         header[0].style.color = "black";
         header[0].style.boxShadow = "0px 2px 5px #bbb";
+        tmLines[0].style.stroke = "black";
+        tmNav[0].style.boxShadow = "0px 2px 5px #bbb";
+        tmNav[0].style.backgroundColor = "white";
+        lineBorder[0].style.stroke = "black";
+
     }
 }

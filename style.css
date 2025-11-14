@@ -152,10 +152,12 @@ svg.lineGraphic{
 .tla h2{
     font-size: 42;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 0;  
+    color: #ffa914;
 }
 
 .tla h1{
+ 
     font-size: 30;
     margin-top: -1;
     margin-bottom: -25;
@@ -171,7 +173,7 @@ svg.lineGraphic{
     width: 50%;
     float: left;
     border: #111 solid 2px;
-    max-width: 300px;
+    max-width: 330px;
     height: auto;
     display: block;
     margin-left: 0;
