@@ -54,6 +54,15 @@ header{
     box-shadow: 0px 2px 5px #111;
 }
 
+a {
+    color: #ffa914;
+}
+
+a :visited{
+    color: #cc6300;
+
+}
+
 main{
     margin: 10 90px;
     padding: 5px 10px;
@@ -61,7 +70,7 @@ main{
 }
 
 #timelineMain{
-    border: solid 1px;
+    /*border: solid 1px;*/
     padding: 0;
     width: calc(100% - 350px);
 }
@@ -121,7 +130,7 @@ svg.lineGraphic{
 
 .tla{
     margin: 20px auto;
-    border: #111 solid 2px;
+    /*border: #111 solid 2px;*/
     max-width: 750px;
     width: 100%;
     height: calc(100% - 20px);
@@ -130,10 +139,10 @@ svg.lineGraphic{
 }
 
 .tla div{
-    margin-top: 15px;
+    margin-top: 5px;
     margin-bottom: 15px;
     float: right;
-    border: #111 solid 2px;    
+    /*border: #111 solid 2px; */
     width: calc(100% - 30px);
     min-height: 280px;
     height:auto;
@@ -171,10 +180,15 @@ svg.lineGraphic{
 }
 
 .tla hr{
-
-    border: 2px solid #ffa914;
-    height: 0px;
+    margin-top: 40px;
+    /* clear floats so the rule sits below the previous floated div and above the next one */
+    display: block;
+    clear: both;
+    width: calc(100% - 30px); /* match inner .tla div width */
+    height: 3px;
+    border: none;
     background-color: #ffa914;
+    box-sizing: border-box;
 }
 
 
