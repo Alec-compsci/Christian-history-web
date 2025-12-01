@@ -64,9 +64,23 @@ a :visited{
 }
 
 main{
-    margin: 10 90px;
+    margin: 10px 90px;
     padding: 5px 10px;
     height: 2000px;
+}
+
+.articleMain{
+    width: calc(100% - 90px);
+    margin: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 1px;
+}
+
+.articleMain article{
+    max-width: 600px;
+    width: 90%;
 }
 
 #timelineMain{
@@ -110,7 +124,6 @@ svg.lineGraphic{
     x: 1;
     y: 1;
     width: 8;
-    height: 8;
     fill: #ffa914;
 }
 

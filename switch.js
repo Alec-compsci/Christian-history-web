@@ -175,3 +175,175 @@ document.addEventListener('DOMContentLoaded', () => {
 // Export for debug / backward compatibility
 window.modeChange = modeChange;
 window.loadMode = loadMode;
+
+
+
+
+
+
+
+
+
+/*
+// Helper: update rect height and keep it bottom-aligned inside its SVG
+            function setRectHeight(t, newH, align = 'top'){
+                if(!t) return;
+                const svg = t.ownerSVGElement || t.parentElement;
+                const svgH = parseFloat(svg.getAttribute('height')) || svg.clientHeight || 300;
+                const clamped = Math.max(0, Math.min(svgH, newH));
+
+                let newY = 0;
+                /*if(align === 'top') {
+                    newY = 0;
+                } else if(align === 'center') {
+                    newY = (svgH - clamped) / 2;
+                  } else { // 'bottom'
+                    newY = svgH - clamped;
+                  }
+
+                t.setAttribute('height', clamped);
+                t.setAttribute('y', newY);
+}
+
+            // Button: increase by a fixed step (keeps previous behavior but fixed)
+            function increase(){
+                const t = document.getElementByClass("lineFill");
+                if(!t) return;
+                const cur = parseFloat(t.getAttribute('height')) || 0;
+                const step = 20;
+                setRectHeight(t, cur + step);
+            }
+
+            
+            // Scroll-driven update: map article scroll progress [0..1] to rect height [minH..maxH]
+            function attachScrollToArticle(){
+                const article = document.querySelector('body');
+                const t = document.getElementById('lineFill');
+                if(!article || !t) return;
+
+                const svg = t.ownerSVGElement || t.parentElement;
+                const svgH = parseFloat(svg.getAttribute('height')) || svg.clientHeight || 300;
+                const minH = 20; // minimum rect height
+                const maxH = svgH; // maximum when scrolled to bottom
+
+                function updateFromScroll(){
+                    const range = article.scrollHeight - article.clientHeight;
+                    const frac = range > 0 ? (article.scrollTop / range) : 1;
+                    const newH = minH + frac * (maxH - minH);
+                    setRectHeight(t, newH);
+                }
+
+                // initialize333333
+                updateFromScroll();
+
+                // update on scroll
+                article.addEventListener('scroll', updateFromScroll, {passive:true});
+                // update on resize (in case svg or article sizes change)
+                window.addEventListener('resize', updateFromScroll);
+            }
+
+            // run after DOM ready
+            window.addEventListener('DOMContentLoaded', () => {
+                attachScrollToArticle();
+            });
+            
+
+/*
+    Timeline navigation: animate the SVG .lineFill height as the user scrolls
+    The filled rect grows proportionally to how far the user has progressed through
+    the `.tla` article. Uses requestAnimationFrame for smooth updates and is
+    resilient to missing elements.
+*/
+
+
+/*
+(function(){
+    let raf = null;
+
+    function clamp(v, a=0, b=1){ return Math.max(a, Math.min(b, v)); }
+
+    function updateLineFill(){
+        const svg = document.querySelector('.lineGraphic');
+        const fill = document.querySelector('.lineFill');
+        const article = document.querySelector('.tla');
+        if(!svg || !fill || !article) return;
+
+        const svgHeight = svg.clientHeight || parseFloat(getComputedStyle(svg).height) || 0;
+        const docScroll = window.scrollY || window.pageYOffset || 0;
+        const winH = window.innerHeight || document.documentElement.clientHeight;
+        const artRect = article.getBoundingClientRect();
+        const artTop = artRect.top + docScroll;
+        const artH = article.offsetHeight || artRect.height || 0;
+
+        // progress = fraction of the article we've scrolled through.
+        // This formula starts increasing when the article enters the viewport and
+        // reaches 1 when we've scrolled past the article entirely.
+        const progress = clamp((docScroll + winH - artTop) / (artH + winH), 0, 1);
+
+            const fillH = Math.round(progress * svgHeight);
+
+            // ensure basic rect attributes exist (x and width). Use the svg width as a guide.
+            try{
+                const svgWidth = svg.clientWidth || parseFloat(getComputedStyle(svg).width) || 10;
+                if(!fill.getAttribute('x')) fill.setAttribute('x', '1');
+                if(!fill.getAttribute('width')) fill.setAttribute('width', String(Math.max(4, Math.round(svgWidth - 2))));
+                if(!fill.getAttribute('fill')) fill.setAttribute('fill', '#ffa914');
+
+                // set rect height and position so it fills from top downward
+                fill.setAttribute('height', String(fillH));
+                fill.setAttribute('y', String(0));
+            } catch (e){
+                // ignore attribute errors
+            }
+    }
+
+    function scheduleUpdate(){
+        if(raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => { updateLineFill(); raf = null; });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // run once immediately
+        scheduleUpdate();
+        window.addEventListener('scroll', scheduleUpdate, { passive: true });
+        window.addEventListener('resize', scheduleUpdate);
+    });
+})();
+
+/*
+// to change the scroll
+function attachtScrollbar() {
+    const body = document.body;
+    const rect = getElementsByClassName("lineFill");
+    if(!body || !rect) return;
+
+    const svg = rect.ownerSVGElement || rect.parentElement;
+    const svgH = parseFloat(svg.getAttribute('height')) || svg.clientHeight || 480; 
+    const minH = 20; // minimum rect height
+
+    function update(){
+        let range = body.scrollHeight - body.clientHeight;
+        let frac = 1;
+        if (range > 0){
+            frac = body.scrollTop / range;
+        }
+        else {
+            frac = 1; // frac is set to 1 if range is negative or zero
+        }
+        const newH = minH + frac * (svgH - minH);
+        rect.setAttribute('height', Math.round(Math.max(0, Math.min(svgH, newH)))); // sets the height of rect and assures that the new height is an interger that isn't a negative nor greater than the max height
+        rect.setAttribute('y', 0); // assures that the rect starts from top
+    }
+
+    update(); // initialize
+
+    // update on scroll
+    article.addEventListener('scroll', update, {passive:true});
+    // update on resize (in case svg or article sizes change)
+    window.addEventListener('resize', update);
+
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+                attachScrollToArticle();
+}); */
