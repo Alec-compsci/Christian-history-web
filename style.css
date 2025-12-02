@@ -1,6 +1,7 @@
 
 
 header{
+    height: 60px;
     margin-left: 80px;
     padding: 15 25px;
     background-color: white ;
@@ -66,11 +67,12 @@ a :visited{
 main{
     margin: 10px 90px;
     padding: 5px 10px;
-    height: 2000px;
+    min-height: calc(100% - 156px);
+    height: auto;
 }
 
 .articleMain{
-    width: calc(100% - 90px);
+    width: calc(100% - 101px);
     margin: none;
     display: flex;
     justify-content: center;
@@ -81,6 +83,12 @@ main{
 .articleMain article{
     max-width: 600px;
     width: 90%;
+}
+
+.articleMain div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #timelineMain{
@@ -203,6 +211,7 @@ body{
 }
 
 footer{
+    height: 20px;
     margin-left: 80px;
     color:white;
     padding: 8px 25px;
