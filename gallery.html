@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Home - Christian History</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="./switch.js" defer></script>
+    <body>
+        
+        <nav class="sidebar">
+            <div>
+            <a href="index.html"><img src="photoshop/homeIcon2.png" class="navIcon"></a>
+            </div>
+            <div>
+                <a href="timelines.html"><img src="photoshop/timelinesIcon2.png" class="navIcon"></a>
+            </div>
+            <div>
+            <a href="articles.html"><img src="photoshop/articlesIcon.png" class="navIcon"></a>
+            </div>
+            <div>
+                <a href="index.html"><img src="photoshop/timelinesIcon.png" class="navIcon"></a>
+            </div>
+            <div>
+                <button onclick="modeChange()" class="mode">Dark Mode</button>
+            </div>
+        </nav>
+        <div class="imgView" style="display: flex;"> <img src="images/christCrucified.jpg"> <button onclick="closeImageViewer()">X Close Image</button> <p> text</p> </div>
+        <header> Home </header>
+        <main>
+            
+            <article class="galleryArticle">
+                <h2> Gallery </h2>
+                <div class="gallery">
+                    <div class="galleryItem" onclick="openImageViewer('images/christCrucified.jpg', 'Christ Crucified By Diego Valazquez')">
+                        <img src="images/christCrucified.jpg" alt="Christ Crucified By Diego Valazquez" class="galleryImage">
+                        <p> Christ Crucified By Diego Valazquez </p>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="images/michelangeloCreationOfAdam.jpg" alt="The Creation of Adam by Michelangelo" class="galleryImage">
+                        <p> The Creation of Adam by Michelangelo </p>
+                    </div>
+                    <div class="galleryItem">
+                        <img src="images/lastSupperLeonardoDaVinci.jpg" alt="The Last Supper by Leonardo da Vinci" class="galleryImage">
+                        <p> The Last Supper by Leonardo da Vinci </p>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer>
+            &copy; 2024 Christian History
+        </footer>
+    </body>
+</html>
