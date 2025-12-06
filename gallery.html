@@ -22,24 +22,43 @@
                 <button onclick="modeChange()" class="mode">Dark Mode</button>
             </div>
         </nav>
-        <div class="imgView" style="display: flex;"> <img src="images/christCrucified.jpg"> <button onclick="closeImageViewer()">X Close Image</button> <p> text</p> </div>
+        <div class="imgView" style="display: none;"> <img src="images/christCrucified.jpg"> <button onclick="closeImageViewer()">X Close Image</button> <p> text</p> </div>
         <header> Home </header>
         <main>
             
             <article class="galleryArticle">
-                <h2> Gallery </h2>
                 <div class="gallery">
                     <div class="galleryItem" onclick="openImageViewer('images/christCrucified.jpg', 'Christ Crucified By Diego Valazquez')">
-                        <img src="images/christCrucified.jpg" alt="Christ Crucified By Diego Valazquez" class="galleryImage">
+                        <img src="images/christCrucified.jpg" alt="Christ Crucified By Diego Valazquez">
                         <p> Christ Crucified By Diego Valazquez </p>
                     </div>
-                    <div class="galleryItem">
-                        <img src="images/michelangeloCreationOfAdam.jpg" alt="The Creation of Adam by Michelangelo" class="galleryImage">
-                        <p> The Creation of Adam by Michelangelo </p>
+                    <div class="galleryItem" onclick="openImageViewer('images/allotments.jpg', 'The Tribal Allotments of Israel Map')">
+                        <img src="images/allotments.jpg" alt="The Tribal Allotments of Israel Map">
+                        <p> The Tribal Allotments of Israel Map </p> <!-- Map from my bible -->
                     </div>
-                    <div class="galleryItem">
-                        <img src="images/lastSupperLeonardoDaVinci.jpg" alt="The Last Supper by Leonardo da Vinci" class="galleryImage">
-                        <p> The Last Supper by Leonardo da Vinci </p>
+                    <div class="galleryItem" onclick="openImageViewer('images/exodus.jpg', 'Map of the Route of the Exodus')">
+                        <img src="images/exodus.jpg" alt="Map of the Route of the Exodus">
+                        <p> Map of the Route of the Exodus </p> <!-- Map from my bible -->
+                    </div>
+                    <div class="galleryItem" onclick="openImageViewer('images/israel&judah.jpg', 'Map of the Kingdoms of Judah and Israel')">
+                        <img src="images/israel&judah.jpg" alt="Map of the Kingdoms of Judah and Israel">
+                        <p> Map of the Kingdoms of Judah and Israel </p> <!-- Map from my bible -->
+                    </div>
+                    <div class="galleryItem" onclick="openImageViewer('images/israel30ad.jpg', 'Map of Israel in Jesus\' Time')">
+                        <img src="images/israel30ad.jpg" alt="Map of Israel in Jesus' Time">
+                        <p> Map of Israel in Jesus' Time </p> <!-- Map from my bible -->
+                    </div>
+                    <div class="galleryItem" onclick="openImageViewer('images/galileesea.jpg', 'Map of Jesus Ministering Around the sea of Galilee ')">
+                        <img src="images/galileesea.jpg" alt="Map of Jesus Ministering Around the sea of Galilee ">
+                        <p> Map of Jesus Ministering Around the sea of Galilee  </p> <!-- Map from my bible -->
+                    </div>
+                    <div class="galleryItem" onclick="openImageViewer('images/passionWeekJerusalem.jpg', '')">
+                        <img src="images/passionWeekJerusalem.jpg" alt="">
+                        <p> Jesus During the Passion Week (before his crucifixion) Mapped </p> <!-- Map from my bible -->
+                    </div>
+                    <div class="galleryItem" onclick="openImageViewer('images/paulmission.jpg', 'Map of Paul the Apostle\'s Missionary Journey')">
+                        <img src="images/paulmission.jpg" alt="Map of Paul the Apostle's Missionary Journey">
+                        <p> Map of Paul the Apostle's Missionary Journey </p> <!-- Map from my bible -->
                     </div>
                 </div>
             </article>

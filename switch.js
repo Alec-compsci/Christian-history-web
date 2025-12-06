@@ -82,6 +82,8 @@ function updateLineFill(){
 // Image viewer
 
 function openImageViewer(src, alt=''){
+    const footer = document.querySelector('footer');
+    const header = document.querySelector('header');
     const theBackground = document.querySelector('main');
     const viewer = document.querySelector('.imgView');
     const img = viewer.querySelector('img');
@@ -97,14 +99,21 @@ function openImageViewer(src, alt=''){
     }
 
     viewer.style.display = 'flex';
-    theBackground.style.filter = "blur(5px)"
+    theBackground.style.filter = "blur(8px)";
+    header.style.filter = "blur(8px)";
+    footer.style.filter = "blur(8px)";
 }
 
 function closeImageViewer(){
+    const footer = document.querySelector('footer');
+    const header = document.querySelector('header');
     const theBackground = document.querySelector('main');
     const viewer = document.querySelector('.imgView');
     if (viewer) {
         viewer.style.display = 'none';
     }
-    theBackground.style.filter = "none"
+    theBackground.style.filter = "none";
+    header.style.filter = "none";
+    footer.style.filter = "none";
+    
 }
