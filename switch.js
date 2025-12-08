@@ -1,3 +1,5 @@
+
+
 // Dark / Light mode switcher (the AI did most of this, but I understand it)
 const _STORAGE_KEY = 'darkMode';
 
@@ -56,10 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMode();
 });
 
-// Export for debug / backward compatibility
-window.modeChange = modeChange;
-window.loadMode = loadMode;
-
 
 
 // Timeline scroll fill update (I did most of this)
@@ -79,7 +77,7 @@ function updateLineFill(){
     fill.setAttribute('height', Math.max(0, Math.min(svg.clientHeight, newH)).toString());
 }
 
-// Image viewer
+// Image viewer (I did much of this)
 
 function openImageViewer(src, alt=''){
     const footer = document.querySelector('footer');

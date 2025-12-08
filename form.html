@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Home - Christian History</title>
+        <title>Suggestions - Christian History</title>
         <link rel="stylesheet" href="style.css">
         <script src="./switch.js" defer></script>
     <body>
@@ -22,11 +22,18 @@
                 <button onclick="modeChange()" class="mode">Dark Mode</button>
             </div>
         </nav>
-        <header> Home </header>
+        <header> Suggestions </header>
         <main>
             <article>
-                <p><b>Welcome to Christian History!</b> This website is dedicated to providing information about the history of Christianity, from its origins to the present day. Explore our timelines, articles, and resources to learn more about the significant events and figures that have shaped the Christian faith over the centuries. </p>
-                <img> 
+                <form action="">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name"><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="suggestion">Suggestion:</label><br>
+                    <textarea id="suggestion" name="suggestion" rows="4" cols="50"></textarea><br><br>
+                    <input type="submit" value="Submit">
+                </form>
             </article>
         </main>
 
