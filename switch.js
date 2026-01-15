@@ -1,4 +1,37 @@
 
+// All scripts for the site
+
+// Counter script (I wrote this)
+const HAS_VISTED_KEY = 'hasVisited';
+localStorage.setItem(HAS_VISTED_KEY, 'false');
+document.addEventListener('DOMContentLoaded', () => {
+    const counterElement = document.getElementById('counter');
+    if (!counterElement) return;
+
+    if (!localStorage.getItem(HAS_VISTED_KEY)) {
+        localStorage.setItem(HAS_VISTED_KEY, 'true');
+        const data = new FormData();
+        data.append('action', 'increment');
+    }
+
+
+});
+
+// credit to "Piskvor left the building" on https://stackoverflow.com/questions/9799276/how-to-send-post-data-with-xmlhttprequest for this function that sends data to php file
+function callPHP(data) {
+    var httpc = new XMLHttpRequest(); // simplified for clarity
+    var url = "counter.php";
+    httpc.open("POST", url, true); // sending as POST
+
+    httpc.onreadystatechange = function() { //Call a function when the state changes.
+        if(httpc.readyState == 4 && httpc.status == 200) { // complete and no errors
+            alert(httpc.responseText); // some processing here, or whatever you want to do with the response
+        }
+    };
+    httpc.send(data);
+}
+
+
 
 // Dark / Light mode switcher (the AI did most of this, but I understand it)
 const _STORAGE_KEY = 'darkMode';
