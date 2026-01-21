@@ -1,47 +1,28 @@
-const fs = require('fs');
-const path = require('path');
-const os = require('os');
-const dotenv = require('dotenv');
-dotenv.config();
-const PORT = process.env.PORT || 10000;
 
 
 // All scripts for the site
 
-const deployHook = process.env.DEPLOY_HOOK;
 
-async function fetchDataFromServer() {
+
+async function fetchAndReload() {
   try {
     const response = await fetch(`http://${deployHook}/api/data`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
-    counter = await response.text(); 
-    console.log(counter); // Access the data from the server
-    return counter;
+    response = await response.text(); 
+    console.log(response); // Access the data from the server
+    return response;
   } catch (error) {
     console.error("Error fetching data:", error);
   }
 }
 
-function changeCounterViewer() {
-    const envPath = path.resolve(process.cwd(), '.env');
-    const mainPath = path.resolve(process.cwd(), 'index.html');
-    let content = fs.readFileSync(mainPath, 'utf8');
-    let counter = fetchDataFromServer() || '0';
 
-    const lines = content.split(os.EOL);
-    const counterLineIndex = lines.findIndex(line => line.includes('id="counter"'));
-    if (counterLineIndex !== -1) {
-        lines[counterLineIndex] = `\t\t\t\t<p id="counter"> Visitors so far: ${counter}</p>`;
-    }
-
-    fs.writeFileSync(mainPath, lines.join(os.EOL), 'utf8');
-}
-
+const deployHook = 'christian-history-web.onrender.com';
 async function sendDataToServer(data) {
     try {
-        const response = await fetch(`http://${deployHook}/api/submit`, {
+        const response = await fetch(`https://${deployHook}/api/submit`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'text/plain'
@@ -68,8 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem(HAS_VISTED_KEY, 'true');
         sendDataToServer('true');
     } 
-
-    changeCounterViewer();
 });
 
 

@@ -1,4 +1,3 @@
-require('dotenv').config();
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
@@ -34,20 +33,41 @@ function updateCounter() {
   fs.writeFileSync(envPath, lines.join(os.EOL));
 
   // Reload the .env file to reflect changes in process.env
-  require('dotenv').config({ path: envPath });
 }
+
+function changeCounterViewer() {
+    const mainPath = path.resolve(process.cwd(), 'index.html');
+    let content = fs.readFileSync(mainPath, 'utf8');
+    let counter = process.env.COUNTER || '0';
+
+    const lines = content.split(os.EOL);
+    const counterLineIndex = lines.findIndex(line => line.includes('id="counter"'));
+    if (counterLineIndex !== -1) {
+        lines[counterLineIndex] = `\t\t\t\t<p id="counter"> Visitors so far: ${counter+1}</p>`;
+    }
+
+    fs.writeFileSync(mainPath, lines.join(os.EOL), 'utf8');
+}
+
+let clientInput = '';
+
+app.post('/api/submit', (req, res) => {
+  clientInput = req.body.input;
+  console.log(`Received input from client: ${clientInput}`);
+  res.status(200).send(`Data received successfully: ${clientInput}`);
+});
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
-  const clientInput = req.body.data;
   console.log(`Received input: ${clientInput}`);
   if (clientInput === 'true') {
     updateCounter();
   }
+  changeCounterViewer();
 });
 
 app.get('/api/data', (req, res) => {
-  res.send(process.env.COUNTER); // Send data back as plain text
+  res.send("reload"); // Send data back as plain text
 });
 
 
