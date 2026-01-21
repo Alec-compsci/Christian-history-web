@@ -39,8 +39,6 @@ function changeCounterViewer() {
     fs.writeFileSync(mainPath, lines.join(os.EOL), 'utf8');
 }
 
-
-
 async function sendDataToServer(data) {
     try {
         const response = await fetch(`http://${deployHook}/api/submit`, {
@@ -57,6 +55,7 @@ async function sendDataToServer(data) {
         console.error("Error sending data to server:", error);
     }
 };
+
 
 // Counter script (I wrote this)
 const HAS_VISTED_KEY = 'hasVisited';
