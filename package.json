@@ -1,0 +1,10 @@
+{
+  "name": "christian-history-web",
+  "version": "1.0.0",
+  "description": "Static site with small Node helper",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": ""
+}

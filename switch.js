@@ -18,7 +18,6 @@ async function fetchAndReload() {
   }
 }
 
-
 const deployHook = 'christian-history-web.onrender.com';
 async function sendDataToServer(data) {
     try {
@@ -36,7 +35,6 @@ async function sendDataToServer(data) {
         console.error("Error sending data to server:", error);
     }
 };
-
 
 // Counter script (I wrote this)
 const HAS_VISTED_KEY = 'hasVisited';
